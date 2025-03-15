@@ -1,5 +1,4 @@
 import folium
-import json
 
 from django.http import HttpResponseNotFound
 from django.shortcuts import render
@@ -71,6 +70,7 @@ def show_pokemon(request, pokemon_id):
         'description': pokemon.description,
         'title_en': pokemon.title_en,
         'title_jp': pokemon.title_jp,
+        'previous_evolution': pokemon.previous_evolution,
     }
 
     folium_map = folium.Map(location=MOSCOW_CENTER, zoom_start=12)
