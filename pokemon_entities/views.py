@@ -71,7 +71,7 @@ def show_pokemon(request, pokemon_id):
         'title_en': pokemon.title_en,
         'title_jp': pokemon.title_jp,
         'previous_evolution': pokemon.previous_evolution,
-        'next_evolution': pokemon.next_evolutions,
+        'next_evolution': pokemon.next_evolution,
     }
 
     folium_map = folium.Map(location=MOSCOW_CENTER, zoom_start=12)
