@@ -4,10 +4,10 @@ from django.db import models  # noqa F401
 
 class Pokemon(models.Model):
     title = models.CharField('Имя покемона:', max_length=200)
-    title_en = models.CharField('Имя покемона на анг.:', max_length=200, default='', help_text='Название на английском')
-    title_jp = models.CharField('Имя покемона на яп.:', max_length=200, default='', help_text='Название на японском')
+    title_en = models.CharField('Имя покемона на анг.:', max_length=200)
+    title_jp = models.CharField('Имя покемона на яп.:', max_length=200)
     image = models.ImageField('Картинка покемона:', null=True)
-    description = models.TextField('Описание покемона:', default='', help_text='Введите описание покемона')
+    description = models.TextField('Описание покемона:', default='')
     previous_evolution = models.ForeignKey(
         'self',
         on_delete=models.SET_NULL,
@@ -27,7 +27,7 @@ class PokemonEntity(models.Model):
     lon = models.FloatField('Долгота:')
 
     appeared_at = models.DateTimeField('Дата и время появления покемона:', default=timezone.now)
-    disappeared_at = models.DateTimeField('Дата и время исчезновения покемона:', default=timezone.now)
+    disappeared_at = models.DateTimeField('Дата и время исчезновения покемона:')
 
     level = models.IntegerField('Уровень покемона:', default=1)
     health = models.IntegerField('Жизнь покемона:', default=100)
