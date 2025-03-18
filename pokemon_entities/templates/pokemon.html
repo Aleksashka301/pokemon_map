@@ -33,8 +33,8 @@
                   <div class="img-thumbnail">
                     <a href="{% url 'pokemon' pokemon.previous_evolution.id %}">
                       <div class="d-flex justify-content-center">
-                        <img class="pull-left mr-2 float-left" src="{{pokemon.previous_evolution.image.url}}" style="height:50px; width:50px">
-                        <p class="align-middle m-0" style="line-height:50px; font-size: 20px;">{{pokemon.previous_evolution.title}}</p>
+                        <img class="pull-left mr-2 float-left" src="{{pokemon.previous_evolution.img_url}}" style="height:50px; width:50px">
+                        <p class="align-middle m-0" style="line-height:50px; font-size: 20px;">{{pokemon.previous_evolution.title_ru}}</p>
                       </div>
                     </a>
                   </div>
@@ -44,11 +44,11 @@
               {% if pokemon.next_evolution %}
                 <div class="col-5 clearfix p-2 m-2">
                   <div class="img-thumbnail">
-                    {% for evolution in pokemon.next_evolution.all %}
+                    {% for evolution in pokemon.next_evolution %}
                       <a href="{% url 'pokemon' evolution.id %}">
                         <div class="d-flex justify-content-center">
-                          <img class="pull-left mr-2 float-left" src="{{evolution.image.url}}" style="height:50px; width:50px">
-                          <p class="align-middle m-0" style="line-height:50px; font-size: 20px;">{{evolution.title}}</p>
+                          <img class="pull-left mr-2 float-left" src="{{evolution.img_url}}" style="height:50px; width:50px">
+                          <p class="align-middle m-0" style="line-height:50px; font-size: 20px;">{{evolution.title_ru}}</p>
                         </div>
                       </a>
                     {% endfor %}
